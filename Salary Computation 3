@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class DannySalary
+{
+    public static double calculateGrossSalary(int basic) 
+    {
+        double HRA, DA;
+        if (basic < 15000)
+        {
+            HRA = 0.15 * basic;
+            DA = 0.90 * basic;
+        } else {
+            HRA = 5000;
+            DA = 0.98 * basic;
+        }
+        return basic + HRA + DA;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int basicSalary = sc.nextInt();
+        double grossSalary = calculateGrossSalary(basicSalary);
+        System.out.printf("%.2f\n", grossSalary);
+        sc.close();
+    }
+}
